@@ -30,6 +30,9 @@ django-allauth==0.28.0
 # Python-PostgreSQL Database Adapter
 psycopg2==2.6.2
 
+# Django database connection with dj_database_url
+dj-database-url
+
 # Unicode slugification
 awesome-slugify==1.6.5
 

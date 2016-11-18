@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
 
+import os
 import environ
+import dj_database_url
 
 ROOT_DIR = environ.Path(__file__) - 3  # (tranpolin/config/settings/common.py - 3 = tranpolin/)
 APPS_DIR = ROOT_DIR.path('tranpolin')
@@ -103,6 +105,14 @@ DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres:///tranpolin'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES['default']['NAME'] = env('POSTGRES_NAME')
+DATABASES['default']['PASSWORD'] = env('POSTGRES_PASSWORD')
+DATABASES['default']['USER'] = env('POSTGRES_USER')
+
+#DATABASES = {}
+#DATABASES['default'] = dj_database_url.config(
+#        default=os.environ.get("DATABASE_SETTINGS"),
+#)
 
 
 # GENERAL CONFIGURATION
