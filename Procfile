@@ -1,1 +1,1 @@
-web: python manage.py runserver 8000
+web: gunicorn --pythonpath tranpolin/ --bind :5494 --workers=3 tranpolin.wsgi
