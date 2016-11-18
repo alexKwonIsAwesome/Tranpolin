@@ -23,4 +23,5 @@ django-anymail==0.6.1
 # --------------------------
 raven==5.32.0
 
-
+# honcho for deployment
+honcho
